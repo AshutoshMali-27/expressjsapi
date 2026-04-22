@@ -1,0 +1,660 @@
+1 .Prime No -- 17 - Prime Number
+			   57 - Not Prime Number
+
+            Console.WriteLine("Enter the no");
+            int number = Convert.ToInt32(Console.ReadLine());
+            bool isPrime = true;
+            for (int i = 2; i < number / 2; i++) {
+                if (number % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime)
+            {
+                Console.WriteLine("no is Prime");
+            }
+            else {
+                Console.WriteLine("no is not Prime");
+            }
+
+            Console.ReadKey();
+			
+2.	Reverse of no.		
+			
+			   Console.WriteLine("Enter The Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int rem, rev = 0;
+            int num1 = number;
+
+
+            while(number != 0)
+            {
+                rem = number % 10;
+                rev = rev * 10 + rem;
+                number = number / 10;
+            }
+
+            Console.WriteLine($"Reverse of Number is  {rev}");
+			
+			
+			
+			
+	3.		Palindrome No 
+			
+			
+			 Console.WriteLine("Enter The Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int rem, rev = 0;
+            int num1 = number;
+
+
+            while(number != 0)
+            {
+                rem = number % 10;
+                rev = rev * 10 + rem;
+                number = number / 10;
+            }
+
+            Console.WriteLine($"Reverse of Number is  {rev}");
+
+            if (num1 == rev)
+            {
+                Console.WriteLine($"no is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine($"no is not Palindrome");
+            }
+
+            Console.ReadKey();
+			
+			
+	4.	Factrail of Number	
+			
+            Console.WriteLine("Enter the number");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            int fact = 1;
+            for(int i = 1; i <= Number; i++)
+            {
+                fact = fact * i;
+            }
+            Console.WriteLine($"Factorail of number is  {fact}");
+
+            Console.ReadKey();
+			
+			
+	5.		Sum of digits
+			
+			
+			   Console.WriteLine("Enter the number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            int rem = 0;
+            while(number != 0)
+            {
+                rem = number % 10;
+                sum = sum + rem;
+                number = number / 10;
+            }
+            Console.WriteLine($"the sum of number is {sum}");
+            Console.ReadKey();
+			
+			
+6.		Convert To Binary 
+		
+		   Console.WriteLine("Enter the number");
+            int DecimalNumber = Convert.ToInt32(Console.ReadLine());
+            string binarynumber = Convert.ToString(DecimalNumber, 2);
+
+            Console.WriteLine($"Binary Representation of " + DecimalNumber + " is " + binarynumber );
+            Console.ReadKey();
+			
+			
+			
+			convert to Decimal 
+			
+			
+            Console.WriteLine("Enter the number");
+            string binarynumber = Console.ReadLine();
+            int decimalno = Convert.ToInt32(binarynumber, 2);
+
+            Console.WriteLine($"decimal conversion of " +binarynumber+ "to decimal no is " +decimalno);
+            Console.ReadKey();
+			
+			
+7.	Count No of Digit in given number
+
+            Console.WriteLine($"Enter the Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+            while (number > 0)
+            {
+                number = number / 10;
+                count++;
+            }
+            Console.WriteLine($"count of number in given number is  {count} ");
+            Console.ReadKey();
+			
+			
+			
+8.	Sum of Even no from  1 to N
+
+            Console.WriteLine("Enter the number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+
+            for(int i = 2; i <= number; i = i + 2)
+            {
+                sum = sum + i;
+
+            }
+
+            Console.WriteLine($"the Sum of all even no till number is {sum}");
+            Console.ReadKey();
+
+
+     How to Find all Factors of a Given Number in C#
+        
+            Console.WriteLine("Enter the number");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i <= number; i++)
+            {
+                if (number % i == 0)
+                {
+                    Console.Write(i + ",");
+                }
+            }
+
+
+            Console.ReadKey();
+
+
+
+half Pyramid
+
+ int n = 5;
+            //int m = 5;
+
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.ReadKey()
+
+
+inverted half pyramid
+
+
+int n = 5;
+
+            for(int i = n; i >= 1; i--)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+			
+			
+			
+Mirror Half Pyramid
+
+
+            int n = 5;
+
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = 1; j <= n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for(int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+			
+			
+			
+			
+			
+		===========================================================================
+Program on Array
+
+		
+
+			
+			
+			
+			
+            //Read and Print Item in Array
+
+            int[] arr = new int[10];
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Element in array");
+            for(int i = 0; i < 10; i++)
+            {
+                Console.Write( $"{arr[i]}");
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			//Read and Print Item in Array Reverse Order
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Console.WriteLine("Enter element in Array");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Element in array");
+            for (int i = n-1; i >= 0; i--)
+            {
+                Console.Write($"{arr[i]}");
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+			
+			
+			
+			//Read and Print sum of element in array 
+			
+			
+			  int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+
+            int[] arr = new int[n];
+            Console.WriteLine("Enter element in Array");
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                sum = sum + arr[i];
+            }
+
+            Console.WriteLine($"Sum of array is {sum}");
+            Console.ReadKey();
+			
+			
+			
+			
+			// WAP to copy element of one array to another array
+
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr1 = new int[n];
+            int[] arr2 = new int[n];
+
+            Console.WriteLine($"enter element in array");
+
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                arr2[i] = arr1[i];
+            }
+
+            for(int i = 0; i < arr2.Length; i++)
+            {
+                Console.WriteLine($"Element in arr2 is {arr2[i]}");
+            }
+
+            Console.ReadKey();
+			
+			
+			
+			
+			
+			
+            //WAP to Count Total No of Duplicate in given Array
+
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr1 = new int[n];
+            int Count = 0;
+
+            Console.WriteLine("Accept element in array");
+
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for(int i = 0; i < arr1.Length; i++)
+            {
+               for(int j = i+1; j < arr1.Length; j++)
+                {
+                    if(arr1[i] == arr1[j])
+                    {
+                        Count++;
+                    }
+                }
+            }
+
+            Console.WriteLine($"Total No of Duplicate Present in array are {Count}");
+            Console.ReadKey();
+			
+			
+			
+			
+			 //WAP to print all unique elements in an array.
+            int n = Convert.ToInt32(Console.ReadLine());
+			
+            int[] arr1 = new int[n];
+            int[] arr2 = new int[n];
+            int[] arrsum = new int[n];
+
+            for (int i=0; i < arr1.Length; i++)
+            {
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for(int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = Convert.ToInt32(Console.ReadLine());
+
+            }
+
+
+            for(int i = 0; i < arrsum.Length; i++)
+            {
+                arrsum[i] = arr1[i] + arr2[i];
+            }
+
+
+            for(int i = 0; i < arrsum.Length; i++)
+            {
+                Console.Write($"{arrsum[i]}");
+                Console.Write($" ");
+            }
+
+
+            Console.ReadKey();
+			
+			
+			
+			
+			//Minimum and maximum from given array
+			
+			   int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr = new int[n];
+
+      
+
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int max = arr[0];
+            int min = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+
+            Console.WriteLine($"the minimum and maximum value of arr is {max} and {min}");
+            Console.ReadKey();
+			
+			
+			
+
+			
+			
+		Separate odd and even integers in separate arrays	
+			
+			int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr1 = new int[n];
+            int[] arreven = new int[n];
+            int[] arrodd = new int[n];
+            int j=0, k=0;
+
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                if(arr1[i] % 2 == 0)
+                {
+                    arreven[j] = arr1[i];
+                    j++;
+                }
+                else
+                {
+                    arrodd[k] = arr1[i];
+                    k++;
+
+                }
+            }
+
+            for(int i = 0; i < j; i++)
+            {
+                Console.Write($"{arreven[i]}");
+                Console.Write($" ");
+            }
+            Console.WriteLine();
+
+            for(int i = 0; i < k; i++)
+            {
+                Console.Write($"{arrodd[i]}");
+                Console.Write($" ");
+
+            }
+
+            Console.ReadKey();
+			
+
+
+
+
+
+			 //Bubble Sort
+			 
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            // 45,32,45,34,67
+           
+            for(int i = 0; i < arr.Length-1; i++)
+            {
+                for(int j = 0; j < arr.Length - 1-i; j++)
+                {
+                    if (arr[j] > arr[j+1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+
+            }
+          for(int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]);
+                Console.Write(" ");
+            }
+            Console.ReadKey();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		//Selection Sort	
+			
+			
+			
+			
+			static void Main(string[] args)
+        {
+            int[] arr = { 64, 12, 25, 22, 11 };
+            Console.WriteLine("Original Array");
+            printarray(arr);
+            SelectionSort(arr);
+            printarray(arr);
+            Console.ReadKey();
+        }
+
+
+        static void SelectionSort(int[] arr)
+        {
+            for(int i = 0; i < arr.Length - 1; i++)
+            {
+                int minmpos = i;
+                for(int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[minmpos] > arr[j])
+                    {
+                        minmpos = j;
+                    }
+                }
+                int temp = arr[minmpos];
+                arr[minmpos] = arr[i];
+                arr[i] = temp;
+            }
+        } 
+
+        static void printarray(int[] arr)
+        {    
+            foreach (int val in arr)
+            {
+                Console.Write(val + " ");
+            }
+            Console.WriteLine();
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		  //Revese a String 
+            Console.WriteLine("Enter the String");
+            string OrignalString = Console.ReadLine();
+            string reverseString = string.Empty;
+            foreach(char c in OrignalString)//owl
+            {
+                reverseString = c + reverseString;
+
+                //o
+                ///wo
+                ///lwo
+            }
+            Console.Write($"Revese String is : {reverseString}");
+            Console.WriteLine();
+
+       
+
+            Console.ReadKey();
+			
+			
+			
+			
+			
+			
+			   //Revese a String 
+            Console.WriteLine("Enter the String");
+            string OrignalString = Console.ReadLine();
+            string reverseString = string.Empty;
+            foreach(char c in OrignalString)//owl
+            
+            {
+                reverseString = c + reverseString;
+
+                //o
+                ///wo
+                ///lwo
+            }
+            Console.WriteLine($"Revese String is : {reverseString}");
+            if (reverseString == OrignalString)
+            {
+                Console.WriteLine("String is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("String is not Palindrome");
+            }
+          
+            Console.WriteLine();
+
+       
+
+            Console.ReadKey();
+			
+			
+			
+			
+			
+			
+			//How to Remove Duplicate Characters From a String in C#
+            Console.WriteLine("Enter the String");
+            string inputstring = Console.ReadLine();
+            string Reultstring = string.Empty;
+       
+            for(int i = 0; i < inputstring.Length; i++)
+            {
+                if (!Reultstring.Contains(inputstring[i]))
+                {
+                    Reultstring = Reultstring + inputstring[i];
+                }
+            }
+
+            Console.WriteLine(Reultstring);
+
+            Console.ReadKey();
