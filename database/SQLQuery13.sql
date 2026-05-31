@@ -1,0 +1,11 @@
+BEGIN TRANSACTION;
+
+UPDATE Employee
+SET Salary = 70000
+WHERE EmployeeID = 2
+COMMIT;
+
+
+UPDATE Employee
+SET Salary = 80000
+WHERE EmployeeID = 1;

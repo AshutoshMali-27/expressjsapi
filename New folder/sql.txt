@@ -1,0 +1,72 @@
+select * from employees
+-- 1. Find the Second Highest Salary
+
+select max(salary) from employees where salary <(select max(salary) from employees)
+
+--2. Find Nth Highest Salary
+
+with nhighsalary as(
+select salary,dense_rank() over(order by salary desc) as rankno from employees
+)
+select * from nhighsalary
+
+--3. Find Duplicate Records
+select employeename,count(*) as employeecount from employees group by employeename having count(*)>1
+
+-- 4. Delete Duplicate Records
+
+with noofrow as(
+select *,ROW_NUMBER() over(partition by employeename order by employeeid) as rn
+from employees
+)
+select * from noofrow where rn>1
+
+
+--5. Employee With Highest Salary In Each Department
+with deptrank as(
+select * ,DENSE_RANK() over(partition by departmentid order by salary desc)as rm from Employees
+)
+select * from deptrank where rm=1
+
+-- 6. Top 3 Salaries In Each Department
+
+with deptrank as (
+select *,DENSE_RANK() over(partition by departmentid order by salary desc) as rm from Employees
+)
+select * from  deptrank where rm<=3
+
+--7. Employees Having Same Manager
+select count(*),managerid from employees group by ManagerID having count(*)>1
+
+-- 8. Employees Earning More Than Their Manager
+
+select e.Salary,m.Salary as managersalary from
+Employees e  join Employees m on e.ManagerID=m.EmployeeID where e.Salary>m.Salary
+
+--9. Find Customers With No Orders
+SELECT c.*
+FROM Customers c
+LEFT JOIN Orders o
+ON c.CustomerId = o.CustomerId
+WHERE o.CustomerId IS NULL;
+
+-- 10. Difference Between ROW_NUMBER, RANK, DENSE_RANK
+SELECT Salary,
+       ROW_NUMBER() OVER(ORDER BY Salary DESC),
+       RANK() OVER(ORDER BY Salary DESC),
+       DENSE_RANK() OVER(ORDER BY Salary DESC)
+FROM Employees;
+
+--- 11 Department Wise Employee Count
+SELECT DepartmentId,
+       COUNT(*) EmployeeCount
+FROM Employees
+GROUP BY DepartmentId;
+
+--12 Find Latest Order For Each Customer
+select * from Orders
+with cte as(
+select *,ROW_NUMBER() over(partition by customerid order by OrderDate desc) as rm from Orders
+)
+select * from cte where rm=1
+ 
